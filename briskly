@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Rotation</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .image-container {
+            width: 450px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Optional: subtle shadow to make the 3D pop */
+            filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.05));
+        }
+
+        #display-image {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+
+        .status {
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img id="display-image" src="img_1.png" alt="Character Animation">
+    </div>
+
+    <div class="status">Rotating View...</div>
+
+    <script>
+        // List your image files here
+        const images = ["img_1.png", "img_2.png", "img_3.png"];
+        let currentIndex = 0;
+        const imgElement = document.getElementById('display-image');
+
+        // Function to cycle to the next image
+        function rotateImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            imgElement.src = images[currentIndex];
+        }
+
+        // Set the interval to 250ms (0.25 seconds)
+        setInterval(rotateImage, 250);
+    </script>
+
+</body>
+</html>
