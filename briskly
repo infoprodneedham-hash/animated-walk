@@ -46,7 +46,11 @@
     <div class="image-container">
         <img id="display-image" src="img_1.png" alt="Character Animation">
     </div>
-
+<div style="margin-top: 30px;">
+    <button onclick="window.location.href='index.html'" style="padding: 10px 20px; cursor: pointer; border-radius: 5px; border: 1px solid #333; background: white; color: #333;">
+        ← Back to Manual Control
+    </button>
+</div>
     <div class="status">Rotating View...</div>
 
     <script>
